@@ -12,5 +12,10 @@ app.add_middleware(
 )
 
 @app.get("/items")
-def get_products():
-    return ["Laptop", "Mouse", "Keyboard", "Monitor"]
+def get_user_profile():
+    return {
+        "id": 101,
+        "username": "aliixdev",
+        "is_admin": True,
+        "skills": ["Python", "JavaScript", "HTML"]
+    }
