@@ -13,7 +13,7 @@ app.add_middleware(
 )
 
 
-    @app.get("/api/items")
+    @app.get("/items")
 def get_products():
     return ["Laptop", "Mouse", "Keyboard", "Monitor"]
 
