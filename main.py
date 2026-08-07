@@ -3,17 +3,14 @@ from fastapi.middleware.cors import CORSMiddleware
 
 app = FastAPI()
 
-# CRITICAL: This allows your GitHub Pages UI to connect safely without security blocks
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],  # Allows all origins to connect
-    allow_credentials=True,
+    allow_origins=["*"],      # Or specify your frontend URL
+    allow_credentials=False,  # Use False with "*"
     allow_methods=["*"],
     allow_headers=["*"],
 )
 
-
-    @app.get("/items")
+@app.get("/items")
 def get_products():
     return ["Laptop", "Mouse", "Keyboard", "Monitor"]
-
