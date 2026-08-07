@@ -5,13 +5,17 @@ app = FastAPI()
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],      # Or specify your frontend URL
-    allow_credentials=False,  # Use False with "*"
+    allow_origins=["*"],
+    allow_credentials=False,
     allow_methods=["*"],
     allow_headers=["*"],
 )
 
 @app.get("/items")
+def get_products():
+    return ["Laptop", "Mouse", "Keyboard", "Monitor"]
+
+@app.get("/profile")
 def get_user_profile():
     return {
         "id": 101,
