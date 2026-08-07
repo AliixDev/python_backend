@@ -12,9 +12,7 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-@app.get("/api")
-def read_root():
-    return {"message": "Api Ok "}
+
     @app.get("/api/items")
 def get_products():
     return ["Laptop", "Mouse", "Keyboard", "Monitor"]
