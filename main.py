@@ -1,5 +1,6 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
+from fastapi.responses import FileResponse
 
 app = FastAPI()
 
@@ -11,15 +12,6 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-@app.get("/items")
-def get_products():
-    return ["Laptop", "Mouse", "Keyboard", "Monitor"]
-
-@app.get("/profile")
-def get_user_profile():
-    return {
-        "id": 101,
-        "username": "aliixdev",
-        "is_admin": True,
-        "skills": ["Python", "JavaScript", "HTML"]
-    }
+@app.get("/avatar")
+def get_image():
+    return FileResponse("my_profile_pic.png")
