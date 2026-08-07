@@ -14,4 +14,8 @@ app.add_middleware(
 
 @app.get("/api")
 def read_root():
-    return {"message": "Hello from your live Python backend!"}
+    return {"message": "Api Ok "}
+    @app.get("/api/items")
+def get_products():
+    return ["Laptop", "Mouse", "Keyboard", "Monitor"]
+
